@@ -1,6 +1,7 @@
 const contentTarget = document.querySelector(".entry")
 const eventHub = document.querySelector("#state-fair")
 
+
 eventHub.addEventListener('click', (clickEvent) => {
     
     if (clickEvent.target.id === "rideTicket" ) {
@@ -23,7 +24,9 @@ eventHub.addEventListener('click', (clickEvent) => {
         const ticketPurchased = new CustomEvent ("fullPackageTicketPurchased")
         eventHub.dispatchEvent(ticketPurchased)   
     }
-    
+    else {
+        console.log('click was not on a ticket button')
+    }
 })
 
 export const TicketBooth = () => {
